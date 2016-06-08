@@ -486,16 +486,21 @@ function desasignarSodas(){
 	var searchIDs = $("#checkForm input:checkbox:checked").map(function(){
       return $(this).val();
     }).get();
+    if(searchIDs != '')
+    {
    // alert(searchIDs+" "+$("#clave").val());
     $.post('../../BaseDatos/editarInformacion.php',
 	{	tipo:3,
 		correo:$("#clave").val(),
 		arreglo:searchIDs
 		},function(resp){
-			alert("Las sodas seleccionadasse han desasignado correctamente");
+			alert("Las sodas seleccionadas se han desasignado correctamente");
 			
 			}
 		);
+    }
+    else
+        alert('No selecciono ninguna soda');
 	}
 	
 

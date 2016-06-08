@@ -121,13 +121,16 @@ $respuesta.="
         <div class='panel-body'>
             <form id='checkForm' class='form-horizontal' role='form'>
                 <div class='form-group'>
-                    <div class='col-sm-10'>".
+                    <div class='col-sm-10'>
+                        <label class='control-label col-sm-2'>Seleccione las sodas que desea desasignar</label>
+                    <div class='col-sm-15'>".
                         retornaUsuariosOSodasCheckbox(traerSodasPorUsuario($_POST['correo'],0),$conexion,0)."
                     </div>
-                     <div class='col-sm-offset-2 col-sm-10'>
-                    <button id='desasignar'  class='btn btn-warning' onclick='desasignarSodas();'>Desasignar Escogidas</button>
-                     </div>
                 </div>
+                </div>
+                    <div class='col-sm-offset-2 col-sm-10'>
+                            <button id='desasignar'  class='btn btn-warning' onclick='desasignarSodas();'>Desasignar seleccionadas</button>
+                        </div>
             </form>
         </div>
     </div>

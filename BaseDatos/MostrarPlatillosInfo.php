@@ -58,7 +58,7 @@ $respuesta="
 </div></div>";
 
 $respuesta.="<div class='container'>
-<label class='control-label' for='nombre'><h3><strong>Platillos existentes </strong></h3>*Se recomienda dejar al menos un platillo de cada tipo</label>
+<label class='control-label' for='nombre'><h3><strong>Platillos existentes </strong></h3><label style='color:darkred'>*Se recomienda dejar al menos un platillo de cada tipo</label></label>
 <div class='panel panel-default'>
  <div id='divtablaPlatillos' class='panel-body'>".RetornaTablaPlatillos(traerPlatillosPorSoda($_POST['id']), $conexion);
 echo $respuesta;
