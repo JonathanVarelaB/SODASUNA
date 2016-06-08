@@ -1,0 +1,92 @@
+html, body{
+    font-family: Georgia,Helvetica, Arial, sans-serif;
+}
+
+html{
+    background: rgba(0, 0, 0, 0.35);
+}
+
+body{
+    background-color: white;
+}
+
+#tituloTabla{
+    color: rgb(205, 22, 25);
+}
+
+.encabezado{
+    background: rgb(205, 22, 25);
+    background-image: url('../imagenes/2.jpg');
+    background-size: 100%;
+    position: relative;
+    width: 100%;
+    height: 160px;
+}
+
+#bienvenida{
+    height: 450px;
+}
+
+#seccion{
+    border: black solid 2px;
+}
+
+.una{
+    background-color: yellowgreen;
+    opacity: 0.7;
+}
+
+nav{
+    font-size: 15px;
+}
+
+.contenido{
+    height: 100%;
+    background-color: white;
+}
+
+  .affix {
+      top: 0;
+      width: 100%;
+  }
+
+  .affix + .container-fluid {
+      padding-top: 70px;
+  }
+
+.autores{
+    padding: 30px;
+    text-align: center;
+}
+
+hr.style18 { 
+  height: 30px; 
+  border-style: solid; 
+  border-color: #8c8b8b; 
+  border-width: 1px 0 0 0; 
+  border-radius: 20px; 
+} 
+hr.style18:before { 
+  display: block; 
+  content: ""; 
+  height: 30px; 
+  margin-top: -31px; 
+  border-style: solid; 
+  border-color: #8c8b8b; 
+  border-width: 0 0 1px 0; 
+  border-radius: 20px; 
+}
+
+footer {
+    background: black;
+    opacity: 0.6;
+    height: 100%;
+}
+
+@media only screen and (max-width: 800px){
+    #nombreUS{
+        display:none;
+    }
+}
+
+
