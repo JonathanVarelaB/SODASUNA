@@ -119,11 +119,14 @@ $respuesta.="
     <label class='control-label'><h4><strong>Desasignar soda</strong></h4></label><br>
     <div class='panel panel-default'>
         <div class='panel-body'>
-            <form class='form-horizontal' role='form'>
+            <form id='checkForm' class='form-horizontal' role='form'>
                 <div class='form-group'>
                     <div class='col-sm-10'>".
                         retornaUsuariosOSodasCheckbox(traerSodasPorUsuario($_POST['correo'],0),$conexion,0)."
                     </div>
+                     <div class='col-sm-offset-2 col-sm-10'>
+                    <button id='desasignar'  class='btn btn-warning' onclick='desasignarSodas();'>Desasignar Escogidas</button>
+                     </div>
                 </div>
             </form>
         </div>

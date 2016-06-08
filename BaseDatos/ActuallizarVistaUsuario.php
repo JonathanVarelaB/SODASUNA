@@ -2,11 +2,13 @@
 include "conexionBD.php";
 include "consultasBD.php";
 $conexion=conectar();
+session_start();
 
 
 $respuesta="
 <div class='container'>
-<label class='control-label'><h3><strong>Escoger soda</strong></h3></label>
+<label class='control-label'><h3><strong>Control de platillos</strong></h3></label>
+<hr class='style18'></hr>
 <div class='panel panel-default'>
  <div class='panel-body'>
  <div id='divcomboEditarSodas'>
@@ -15,7 +17,7 @@ $respuesta="
         <label class='control-label col-sm-2'>Seleccione la soda:</label>
         <div class='col-sm-10'>
             <select class='form-control' onchange='traerinfoPlatillos(this);' id='selectsodas'>".
-            RetornaComboBoxUsuariosOSodas(traerSodasPorUsuario(/*$_SESSION['correoUsuario']*/"q@q.com",0),$conexion,0).
+            RetornaComboBoxUsuariosOSodas(traerSodasPorUsuario($_SESSION['correoUsuario'],0),$conexion,0).
             "</select>
         </div>
     </div>

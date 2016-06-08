@@ -22,7 +22,12 @@
             </div>
         </nav>
         <div class="contenido">
-
+            <div id="bienvenida">
+                <div class="container">
+                    <br><br><img style="width:50px;" src="../../imagenes/user.png" /><br>
+                    <label style="color:darkred;"><h3>Bienvenido(a) </h3></label><br>
+                </div>
+            </div>
         </div>
         <div class="contenidoEditable">
 

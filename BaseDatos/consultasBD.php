@@ -35,6 +35,10 @@ function asigSodas(){
     return 'Insert INTO Usuario_Soda VALUES(?,?,?)';
 }
 
+function desAsigSodas(){
+    return 'DELETE FROM Usuario_Soda WHERE 
+    Usuario_PK_Correo_Electronico =? AND Soda_PK_Identificador= ? ';
+}
 function eliminarSod(){
     return 'delete from Soda Where PK_Identificador = ?';
 }
@@ -171,7 +175,7 @@ function RetornaComboBoxPlatillos($consulta, $conexion,$cual) {
 
 function RetornaTablaPlatillos($consulta, $conexion) {
     try {
-    $respuesta = "<Table><thead><th>Nombre</th><th>D&iacute;a</th><th>Descripci&oacute;n</th><th>Precio</th></thead>";
+    $respuesta = "<table class='table table-responsive'><thead><th>Nombre</th><th>D&iacute;a</th><th>Descripci&oacute;n</th><th>Precio</th><th>Borrar</th></thead>";
     $i = 1;
     foreach ($conexion->query($consulta) as $fila) {
         $respuesta.="<tr>
@@ -179,14 +183,14 @@ function RetornaTablaPlatillos($consulta, $conexion) {
         <td>".date_format(new DateTime($fila['PK_Dia']),'d-m-Y')." <input type='hidden' id='dia" . $i . "' value='".$fila['PK_Dia']."'</td>
         <td>".$fila['Descripcion']."</td>
         <td>".$fila['Precio']."</td>
-        <td><button type='submit' class='btn btn-warning' onclick='borrarPlatillo(".$i.");' name='borrarPlatillo' id='borrarPlatillo'>Borrar</button></td>
+        <td><button type='submit' class='btn-sm btn-danger' onclick='borrarPlatillo(".$i.");' name='borrarPlatillo' id='borrarPlatillo'><span class='glyphicon glyphicon-remove'></span></button></td>
         </tr>";
         $i++;
     }
       
     $respuesta.="</table>";
     if ($i == 1) {
-        $respuesta = "<h1>No hay elementos</h1>";
+        $respuesta = "<h4>No hay elementos</h4>";
     }
     return $respuesta;
     } catch (PDOException $ex) {//si no se puede conectar

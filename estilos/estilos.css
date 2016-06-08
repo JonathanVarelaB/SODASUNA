@@ -3,7 +3,7 @@ html, body{
 }
 
 html{
-    background: rgba(0, 0, 0, 0.35);
+    background:  #8c8b8b;
 }
 
 body{
@@ -78,8 +78,7 @@ hr.style18:before {
 }
 
 footer {
-    background: black;
-    opacity: 0.6;
+    background: #8c8b8b;
     height: 100%;
 }
 

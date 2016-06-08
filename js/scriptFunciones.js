@@ -23,7 +23,7 @@ $(document).ready(function(){
     $('#inicioUsu').click(function(){
         activo();$('#inicio').toggleClass("active");
          $('.contenidoEditable').text("");
-        $('.contenido').text("aqui va, no se que");
+        $('.contenido').html('<div id="bienvenida"><div class="container"><br><br><img style="width:50px;" src="../../imagenes/user.png" /><br><label style="color:darkred;"><h3>Bienvenido(a) </h3></label><br></div></div>');
    });
     $('#platillosUsu').click(function(){
         activo();$('#usuarios').toggleClass("active");
@@ -205,17 +205,15 @@ function editarAdministrador(){
 	);}
 function actualizarContraseña(){
 	$.post('../../BaseDatos/editarInformacion.php',
-	{	tipo:0,
-		nombre:$("#contrasenaActual").val(),
-		correo:$("#contrasenaNueva").val(),
-		clave:$("#clave").val()
+	{	tipo:9,
+		actual:$("#contrasenaActual").val(),
+		nueva:$("#contrasenaNueva").val()
 	},
 	function(resp){
 		if(resp!=1)
-		alert('No se puede editar, existen usuarios registrados a su cargo');
+		alert('La contraseña actual es incorrecta');
 		else{
-		alert("Administrador " + $("#nuevonombreadmi").val() + " editado");
-		actualizarcombo(0);
+		alert("Contraseña actualizada");
 	}
 		}
 	);}
@@ -475,11 +473,27 @@ function borrarPlatillo(i){
 		soda:$("#idsodaG").val(),
 		},function(resp){
 			if(resp!=1)
-			alert(resp)
+			alert(resp);
 			else{
 			alert($("#nombre"+i).val()+" "+ $("#idsodaG").val()+" "+$("#dia"+i).val()+" eliminado correctamente");
 			}
 			actualizarcombo(4);
+			}
+		);
+	}
+	
+function desasignarSodas(){
+	var searchIDs = $("#checkForm input:checkbox:checked").map(function(){
+      return $(this).val();
+    }).get();
+   // alert(searchIDs+" "+$("#clave").val());
+    $.post('../../BaseDatos/editarInformacion.php',
+	{	tipo:3,
+		correo:$("#clave").val(),
+		arreglo:searchIDs
+		},function(resp){
+			alert("Las sodas seleccionadasse han desasignado correctamente");
+			
 			}
 		);
 	}

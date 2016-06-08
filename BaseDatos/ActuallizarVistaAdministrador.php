@@ -2,6 +2,7 @@
 include "conexionBD.php";
 include "consultasBD.php";
 $conexion=conectar();
+session_start();
 
 if($_POST['tipo']==0)
  administradores($conexion);
